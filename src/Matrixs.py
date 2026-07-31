@@ -5,7 +5,7 @@ import numpy as np
 
 
 def Main():
-    size : int = Input('Please Enter the Number of Row/Column')
+    size : int = Input('Please Enter the Number of Row/Column = ')
     
     M : List[List[int]]= [[] for _ in range(0,size)]
     
@@ -14,18 +14,18 @@ def Main():
             x = Input(f'please enter the {i + 1} by { j + 1 } = ')
             M[i].append(x)
     
-    print(f'Matrix = {M}')
+    print(f'Matrix = {M}\n')
     while True:
-        choice =Input("Please Choice Operation to Perform :\n1. Scaler Multiplication \n2.Transpose \n3.Fetch Rows and Column \n0.Exit\n =")
+        choice =Input("\nPlease Choice Operation to Perform :\n1. Scaler Multiplication \n2.Transpose \n3.Fetch Rows and Column \nif exit 0\n=")
         if choice == 1:
-            scaler_number=Input("Enter Number for Scaler Multiplication:")
+            scaler_number=Input("Enter Number for Scaler Multiplication: ")
             # Display Scaler Multiplication
-            for i,m in enumerate(M):
-                print(Scaler_multiplication(scaler_number,M[i]))
+            for matrix in M:
+                print(Scaler_multiplication(scaler_number,matrix), end= '\n')
         elif choice == 2:
             Matrix=np.array(M)
             print("Transpose of matrix = ")
-            print(Matrix.T)
+            print(Matrix.T , end='\n')
             #Display Transpose of Matrix
         elif choice == 3:
             Fetch_Row_Column(matrix=M)
@@ -38,7 +38,7 @@ def Main():
         
 def Fetch_Row_Column (matrix):
     while True:
-        AsqQuestion = Input("What do you want o print ?\n1. Row\n2. Column\n3.Exit =")
+        AsqQuestion = Input("\nWhat do you want o print ?\n1. Row\n2. Column\nif Exit 0\n= ")
         types = 'not valid'
         match (AsqQuestion):
             case 1:
@@ -66,4 +66,6 @@ def DisplayMatrix(type : str, matrix : List[List[int]]):
             print(f'column {i+1} = {column}')
     else:
         print('Please Enter correct option')
+
+
         

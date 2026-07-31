@@ -1,6 +1,7 @@
 from src.Ploting import Create_Complex, Create_Graph
 from src.Vectors import main_func ,Vector_multiplication
 from src.Matrixs import Main
+from src.Complex import Operation
 
 def main():
     
@@ -12,8 +13,9 @@ def main():
     # main_func()
     
     
-    Main()
-    ...
+    # Main()
+    Operation()
+    # ...
 
 if __name__ == "__main__":
     main()
